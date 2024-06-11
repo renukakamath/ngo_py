@@ -1,0 +1,67 @@
+{% include 'userheader.html' %}
+
+
+<section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+            	<center>
+                <h2 class="animate__animated animate__fadeInDown"><span>User Edit</span> </h2>
+                
+            	<form method="post">
+
+                  {% if data  ['udateuser'] %}
+					<table class="table" style="width: 500px;color: white">
+    <tr>
+      <th>First Name</th>
+      <td><input type="text"   value="{{data['udateuser'][0]['fname']}}"   required=""  pattern="[A-Z a-z]+$"  name="fn" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><input type="text"   value="{{data['udateuser'][0]['lname']}}"    required="" pattern="[A-Z a-z]+$"  name="ln" class="form-control"></td>
+    </tr>
+  
+    <tr>
+      <th>Place</th>
+      <td><input type="text"  value="{{data['udateuser'][0]['place']}}"  required="" pattern="[A-Z a-z]+$"  name="place" class="form-control"></td>
+    </tr>
+    
+    <tr>
+      <th>Phone</th>
+      <td><input type="text"   value="{{data['udateuser'][0]['phone']}}"    required="" pattern="[0-9]{10}"  maxlength="10" name="phone" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><input type="email"  value="{{data['udateuser'][0]['email']}}"   required="" name="email" class="form-control"></td>
+    </tr>
+   
+					<tr>
+						<td align="center" colspan="2"><input type="submit" name="login" value="REGISTER" class="btn btn-danger"></td>
+					</tr>
+				</table>
+
+        
+         {% endif %}
+				</form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  
+
+
+
+
+

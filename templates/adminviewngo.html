@@ -1,0 +1,47 @@
+{% include 'adminheader.html' %}
+<center>
+	
+
+
+<form method="post" >
+<br><br><br><br>
+
+
+
+
+
+<h2 style="color: white">View NGO</h2>
+<table class="table" style="width:200px;">
+	<tr>
+		<th> NGO</th>
+		<th>Place</th>
+		<th>Phone</th>
+		<th>Email</th>
+	</tr>
+	{% for row in data['user'] %}
+	<tr>
+		<td>{{row['ngo']}}</td>
+		<td>{{row['place']}}</td>
+		<td>{{row['phone']}}</td>
+		<td>{{row['email']}}</td>
+		<td><a class="btn btn-info" href="/{{row['file']}}">id proof</a></td>
+		{%if row['usertype']=="pending"%}
+		<td><a href="?action=accept&login_id={{row['login_id']}}" class="btn btn-danger">accept</a></td>
+		<td><a href="?action=reject&login_id={{row['login_id']}}" class="btn btn-success">reject</a></td>
+			{%endif%}
+
+	{%if row['usertype']=="ngo"%}
+	
+		<td><a href="?action=reject&login_id={{row['login_id']}}" class="btn btn-success">reject</a></td>
+		
+		
+		{%endif%}
+
+
+	</tr>
+	{% endfor %}
+</table>
+</form>
+</div>
+</center>
+

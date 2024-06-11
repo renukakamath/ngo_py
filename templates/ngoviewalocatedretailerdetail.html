@@ -1,0 +1,28 @@
+{% include 'ngoheader.html' %}
+<center>
+<form method="post">
+<br><br><br><br><br><br>
+<h2 style="color: white">View Retailer</h2>
+<table class="table" style="width:200px;">
+  <tr>
+    <th> Name</th>
+    <th>Place</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  {% for row in data['view'] %}
+  <tr>
+    <td>{{row['name']}}</td>
+    <td>{{row['place']}}</td>
+    <td>{{row['phone']}}</td>
+    <td>{{row['email']}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+</form>
+</center>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>

@@ -1,0 +1,34 @@
+{% include 'adminheader.html' %}
+<center>
+<br><br><br><br><br><br>
+<form method="post">
+
+<h1 style="color:white" >View Work</h1>
+<table class="table" style="width:500px;">
+	<tr>
+		<th>Work</th>
+		<th>Detail</th>
+		<th>Date</th>
+		<th>Status</th>
+		<th></th>
+	</tr>
+	{% for row in data['view'] %}
+	<tr>
+		<td>{{row['work']}}</td>
+		<td>{{row['detail']}}</td>
+		<td>{{row['date']}}</td>
+		<td><a href="/{{row['file']}}"><img src="/{{row['file']}}" width="100" height="100"></a></td>
+		{%if row['status']=="pending"%}
+		<td><a class="btn btn-success" href="?action=approve&wid={{row['work_id']}}">approve</a></td>
+		<td><a class="btn btn-danger" href="?action=reject&wid={{row['work_id']}}">reject</a></td>
+		{%elif row['status']=="approve"%}
+		<td><a class="btn btn-success" href="adminviewproposal?work_id={{row['work_id']}}">view proposal </a></td>
+
+		{%else%}
+		<td>{{row['status']}}</td>
+	{% endif %}
+	</tr>
+	{% endfor %}
+</table>
+</div>
+</center>

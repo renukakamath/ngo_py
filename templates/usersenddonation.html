@@ -1,0 +1,46 @@
+{% include 'userheader.html' %}
+<center>
+	
+
+
+<form method="post" >
+<br><br><br><br>
+<!-- 
+	<h2 style="color: white">Send Donation</h2>
+<table class="table" style="width: 500px;color: white">
+		
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" name="a" class="form-control"></td>
+		</tr>
+		
+	
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="add" value="ADD" class="btn btn-primary"></td>
+		</tr>
+	</table>
+</form>
+</div>
+
+<br><br><br><br> -->
+
+<h1 style="color: white">View Donation</h1>
+<table class="table" style="width: 700px">
+	<tr>
+		<th>Name</th>
+		<th>Amount</th>
+		<th>Date</th>
+	</tr>
+	{% for row in data['ona'] %}
+	<tr>
+
+		<td>{{row['fname']}}{{row['lname']}}</td>
+		<td>{{row['amount']}}</td>
+		<td>{{row['date']}}</td>
+		<td>{{row['status']}}</td>
+		
+	</tr>
+	{% endfor %}
+</table>
+</center>
+

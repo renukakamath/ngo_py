@@ -1,0 +1,32 @@
+{% include 'adminheader.html' %}
+<center>
+<form method="post">
+<br><br><br><br><br><br>
+<h1 style="color: white">View Proposal</h1>
+<table class="table" style="width: 700px">
+	<tr>
+		<th>Retailer</th>
+		<th>Amount</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['view'] %}
+	<tr>
+		<td>{{row['name']}}</td>
+		<td>{{row['amount']}}</td>
+		<td>{{row['date']}}</td>
+		{%if row['status']=="pending"%}
+		<td><a class="btn btn-success" href="?action=approve&work_id={{row['work_id']}}&retailer_id={{row['retailer_id']}}&amt={{row['amount']}}">approve</a></td>
+		<td><a class="btn btn-danger" href="?action=reject&work_id={{row['work_id']}}&retailer_id={{row['retailer_id']}}&amt={{data['amt']}}">reject</a></td>
+		{%else%}
+		<td>{{row['status']}}</td>
+	{% endif %}	</tr>
+	{% endfor %}
+</table>
+</div>
+</form>
+</center>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>

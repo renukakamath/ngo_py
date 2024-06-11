@@ -1,0 +1,92 @@
+{% include 'publicheader.html' %}
+<center>
+	
+
+
+<form method="post" enctype="multipart/form-data" >
+{% if data['worker'] %}
+<h2 style="color: white">Update NGO</h2>
+<table class="table" style="width: 500px;color: white">
+
+		<tr>
+			<th>NGO</th>
+			<td><input type="text" name="fn" value="{{data['worker'][0]['ngo']}}" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Place</th>
+			<td><input type="text" name="place" value="{{data['worker'][0]['place']}}" class="form-control"></td>
+		</tr>
+		
+	
+		<tr>
+			<th>Phone</th>
+			<td><input type="text" name="phone" value="{{data['worker'][0]['phone']}}" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td><input type="email" name="email" value="{{data['worker'][0]['email']}}" class="form-control"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="update" value="UPDATE" class="btn btn-primary"></td>
+		</tr>
+	</table>
+
+	{% else %}
+<section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+            	<center>
+                <h2 class="animate__animated animate__fadeInDown"><span>Manage NGO</span> </h2>
+	<!-- <h2 style="color: white">Manage NGO</h2> -->
+<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>NGO</th>
+			<td><input type="text" name="fn" class="form-control"></td>
+		</tr>
+	
+		<tr>
+			<th>Place</th>
+			<td><input type="text" name="place" class="form-control"></td>
+		</tr>
+		
+		<tr>
+			<th>Phone</th>
+			<td><input type="text" name="phone" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td><input type="email" name="email" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>ID Proof</th>
+			<td><input type="file" name="i" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Username</th>
+			<td><input type="text" name="username" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Password</th>
+			<td><input type="password" name="password" class="form-control"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="manage" value="ADD" class="btn btn-primary"></td>
+		</tr>
+	</table>
+	{% endif %}
+</form>
+</div>
+
+<br><br><br><br>
+
+</center></div></div></div></div></div></div></section>
+

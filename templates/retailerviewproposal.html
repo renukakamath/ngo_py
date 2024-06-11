@@ -1,0 +1,29 @@
+{% include 'rheader.html' %}
+<center>
+	
+
+
+
+
+<h1 style="color: white">View Proposal</h1>
+<table class="table" style="width: 700px">
+	<tr>
+		<th>Retailer</th>
+		<th>Amount</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['view'] %}
+	<tr>
+		<td>{{row['name']}}</td>
+		<td>{{row['amount']}}</td>
+		<td>{{row['date']}}</td>
+		<td>{{row['status']}}</td>
+
+		<td><a  class="btn btn-success" href="?action=cancel&pid={{row['proposal_id']}}&work_id={{row['work_id']}}">Cancel</a></td>
+		
+	</tr>
+	{% endfor %}
+</table>
+</center>
+

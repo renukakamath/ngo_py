@@ -1,0 +1,35 @@
+{% include 'adminheader.html' %}
+<center>
+<form method="post">
+<br><br><br><br><br><br>
+
+<h1 style="color: white">View Donation</h1>
+<table class="table" style="width: 700px">
+
+
+	<tr>
+		<th>Username</th>
+		<th>Amount</th>
+		<th>Date</th>
+	</tr>
+	{% for row in data['view'] %}
+	<tr>
+	
+
+		<td><a class="btn btn-info" href="adminviewuserdetails?u_id={{row['user_id']}}">view details</a></td>
+		<td>{{row['amount']}}</td>
+		<td>{{row['date']}}</td>
+		<td>{{row['status']}}</td>
+		
+	</tr>
+	{% endfor %}
+</table>
+</div>
+</form>
+</center>
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>

@@ -1,0 +1,58 @@
+{% include 'rheader.html' %}
+<center>
+	
+
+
+<form method="post" >
+<br><br><br><br>
+
+	<h2 style="color: white">Send Proposal</h2>
+<table class="table" style="width: 500px;color: white">
+		<!-- <tr>
+			<th>Retailer</th>
+			<td><select name="re">
+				{% for row in data['rview']%}
+				<option value="{{row['retailer_id']}}">{{row['name']}}</option>
+				{%endfor%}
+				
+			</select></td>
+		</tr>
+	 -->
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" name="a" class="form-control"></td>
+		</tr>
+		<th>Date</th>
+			<td><input type="date"  min="{{today}}" name="date" class="form-control"></td>
+		</tr>
+		
+	
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="add" value="ADD" class="btn btn-primary"></td>
+		</tr>
+	</table>
+</form>
+</div>
+
+<br><br><br><br>
+
+<!-- <h1 style="color: white">View Proposal</h1>
+<table class="table" style="width: 700px">
+	<tr>
+		<th>Retailer</th>
+		<th>Amount</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['view'] %}
+	<tr>
+		<td>{{row['name']}}</td>
+		<td>{{row['amount']}}</td>
+		<td>{{row['date']}}</td>
+		<td>{{row['status']}}</td>
+		
+	</tr>
+	{% endfor %}
+</table> -->
+</center>
+

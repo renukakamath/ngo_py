@@ -1,0 +1,29 @@
+{% include 'ngoheader.html' %}
+<center>
+<form method="post">
+<br><br><br><br><br><br>
+<h1 style="color: white">View Proposal</h1>
+<table class="table" style="width: 700px">
+	<tr>
+		<th>Retailer</th>
+		<th>Amount</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['view'] %}
+	<tr>
+		<td><a class="btn btn-success" href="ngoviewalocatedretailerdetail?retailer_id={{row['retailer_id']}}">alocated retailer</a></td>
+		<td>{{row['amount']}}</td>
+		<td>{{row['date']}}</td>
+		<td>{{row['status']}}</td>
+		
+	</tr>
+	{% endfor %}
+</table>
+</div>
+</form>
+</center>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>

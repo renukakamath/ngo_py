@@ -1,0 +1,56 @@
+{% include 'ngoheader.html' %}
+<center>
+<form method="post" enctype="multipart/form-data">
+<br><br><br><br>
+	<h1 style="color:white">Add Work</h1>
+<table class="table" style="width:500px;">
+		<tr>
+			<th>Work</th>
+			<td><input type="text" name="event" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Detail</th>
+			<td><input type="text" name="description" class="form-control"></td>
+		</tr>
+		<tr>
+			<th>Enddate</th>
+			<td><input type="date" name="edate" class="form-control"></td>
+		</tr>	
+
+
+			<tr>
+			<th>file</th>
+			<td><input type="file" name="img" class="form-control"></td>
+		</tr>	
+
+
+		<tr>
+			<td align="center" colspan="2"><input type="submit" name="add" value="ADD" class="btn btn-success"></td>
+		</tr>
+	</table>
+</form>
+
+<h1 style="color:white" >View Work</h1>
+<table class="table" style="width:500px;">
+	<tr>
+		<th>Work</th>
+		<th>Detail</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['event'] %}
+	<tr>
+		<td>{{row['work']}}</td>
+		<td>{{row['detail']}}</td>
+		<td>{{row['date']}}</td>
+		{%if row['status']=="approve" %}
+		<td><a class="btn btn-success" href="ngoviewproposal?work_id={{row['work_id']}}">view proposal</a></td>
+		{%else%}
+		<td>{{row['status']}}</td>
+	{% endif %}
+	</tr>
+	{% endfor %}
+</table>
+</div>
+</center>
+

@@ -1,0 +1,29 @@
+{% include 'rheader.html' %}
+<center>
+<br><br><br><br><br><br>
+<form method="post">
+
+<h1 style="color:white" >View Work</h1>
+<table class="table" style="width:500px;">
+	<tr>
+		<th>Work</th>
+		<th>Detail</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	{% for row in data['view'] %}
+	<tr>
+		<td>{{row['work']}}</td>
+		<td>{{row['detail']}}</td>
+		<td>{{row['date']}}</td>
+		{%if row['status']=="approve"%}
+		<td><a class="btn btn-info" href="retailersendproposal?work_id={{row['work_id']}}">send proposal</a></td>{%elif row['status']=="proposal alloted"%}
+		<td><a class="btn btn-success" href="retailerviewproposal?work_id={{row['work_id']}}">view proposal</a></td>
+		{%else%}
+		<td>{{row['status']}}</td>
+		{%endif%}
+	</tr>
+	{% endfor %}
+</table>
+</div>
+</center>
